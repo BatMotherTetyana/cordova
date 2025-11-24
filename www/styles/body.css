@@ -1,0 +1,458 @@
+/* Общие стили для сайта */
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #675aaa;
+    color: #2e226b;
+    font-family: 'Press Start 2P';
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px;
+    background-color: #5c4ea4;
+    color: #FFE6FF;
+    text-align: center;
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header a {
+    padding: 15px;
+    color: #FFE6FF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+aside {
+    width: 80%;
+    margin: 20px;
+    padding: 15px;
+    background-color: #d0c7f4;
+    border: 2px solid #5c4ea4;
+    border-radius: 8px;
+}
+#banner {
+    text-align: center;
+    padding: 20px 0;
+}
+
+#banner img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #2e226b;
+}
+aside#bannerr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    width: 80%;
+    margin: 20px;
+    padding: 15px;
+    background-color: #d0c7f4;
+    border: 2px solid #5c4ea4;
+    border-radius: 8px;
+}
+
+aside#bannerr a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(20% - 10px);
+    min-width: 1px;
+    max-width: 100px;
+    aspect-ratio: 1;
+}
+
+aside#bannerr a img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 30%;
+}
+
+aside#bannerr a img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+section {
+    width: 80%;
+    margin: 20px 0;
+    padding: 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('../images/imggg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #FFE6FF;
+    text-align: center;
+    border: 2px solid #5c4ea4;
+    border-radius: 8px;
+}
+
+
+
+article {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #d0c7f4;
+    border: 1px solid #675aaa;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+article h2 {
+    margin: 0;
+    padding: 15px;
+    background-color: #d0c7f4;
+    color: #2e226b;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+article:hover {
+    transform: scale(101%);
+    background-color: #d0c7f4;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+article.expanded .content {
+    max-height: 10090px;
+}
+
+.content {
+    max-height: 0;
+    padding: 0 15px;
+    overflow: hidden;
+    color: #5c4ea4;
+    text-align: center;
+    transition: max-height 0.3s ease;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #5c4ea4;
+    color: #FFE6FF;
+    text-align: center;
+}
+.slider {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 2px solid #5c4ea4;
+    border-radius: 10px;
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.slider-wrapper img {
+    width: 100%;
+    flex-shrink: 0;
+}
+.form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-container input {
+    width: 90%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background: #2a5298;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.form-container button:hover {
+    background: #1e3c72;
+}
+
+.toggle {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.toggle a {
+    color: #4fc3f7;
+    text-decoration: none;
+}
+
+.toggle a:hover {
+    text-decoration: underline;
+}
+
+#animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#news {
+    width: 65%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    transition: width 0.3s ease; /* Плавное изменение ширины */
+}
+
+@media (max-width: 1200px) {
+    #news {
+        width: 75%;
+    }
+}
+
+@media (max-width: 900px) {
+    #news {
+        width: 85%;
+    }
+}
+
+@media (max-width: 600px) {
+    #news {
+        width: 95%;
+    }
+}
+
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.center-image {
+    width: 60%;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.p img {
+    border-radius: 10%;
+}
+#joke-container {
+    text-align: center;
+    margin-top: 50px;
+    background-color: #5c4ea4;
+    color: #FFE6FF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#joke-container p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+#fetch-joke {
+	font-family: 'Press Start 2P';
+    background-color: #675aaa;
+    color: #FFE6FF;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#fetch-joke:hover {
+    background-color: #2e226b;
+}
+
+#style-panel-btn {
+    position: fixed;
+    top: 3px;
+    right: 30px;
+    width: 30px;
+	height: 30px;
+    background-color: #5c4ea4;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    border: none;
+    color: white;
+    border-radius: 30%;
+}
+
+#style-panel-btn:hover {
+	background-color: #2e226b;
+	transform: scale(110%);
+}
+#style-panel {
+  position: fixed;
+  top: 40px; /* Расстояние от верхнего края экрана */
+  left: 81%; /* Совпадает с кнопкой */
+  display: none; /* Скрыто по умолчанию */
+  z-index: 1000; /* Поверх других элементов */
+  background-color: #d0c7f4;
+  border: 1px solid #ccc;
+  padding: 15px;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+@media (max-width: 1200px) {
+    #style-panel  {
+        left: 50%;
+    }
+}
+
+@media (max-width: 900px) {
+    #style-panel  {
+        left: 20%;
+    }
+}
+
+@media (max-width: 600px) {
+    #style-panel  {
+        left: 0%;
+    }
+}
+
+#style-panel h2 {
+  margin-top: 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+#style-panel label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+#style-panel input,
+#style-panel button {
+  margin-top: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+#style-panel button {
+  cursor: pointer;
+  background-color: #5c4ea4;
+  color: #FFE6FF;
+  border: none;
+  padding: 8px 0;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-family: 'Press Start 2P';
+}
+
+#style-panel button:hover {
+  background-color: #2e226b;
+}
+#background-url {
+	background-color: #FFE6FF;
+}

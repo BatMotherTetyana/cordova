@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The portfolio of Limbo Patriarch is an artist who creates furry, pony, anthro and monster art. Learn more about services, styles, pricing and fees.">
+    <meta name="keywords" content="Limbo Patriarch, furry art, anthro art, monster art, pony artist, order a drawing, commissions for art">
+    <meta name="author" content="Limbo Patriarch">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Limbo Patriarch - Artist's Portfolio">
+    <meta property="og:description" content="Limbo Patriarch's official portfolio - furry, anthro, monster, and pony art creation services. Various styles are available: sketches, full body, stickers.">
+    <meta property="og:image" content="https://batmothertetyana.github.io/Portfolio/images/logo.png">
+    <meta property="og:url" content="https://batmothertetyana.github.io/Portfolio/">
+    <title>Limbo Patriarch - Artist's Portfolio</title>
+
+    <!-- Подключение CSS файлов -->
+	
+    <link rel="stylesheet" href="styles/body.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="animated-background"></canvas>
+
+    <!-- Верхняя навигация -->
+  <header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+			<button id="style-panel-btn">⛭</button>
+        </ul>
+    </nav>
+</header>
+
+<div id="style-panel" style="display: none;">
+  <h2>Styles control panel</h2>
+  
+  <label>Background color:</label>
+  <input type="color" id="background-color-picker">
+  <button class="reset-btn" id="reset-bg-color">Cancel</button>
+  
+  <label>Background image:</label>
+  <input type="text" id="background-url" placeholder="Paste the URL of the image">
+  <button id="apply-background-url">Apply image</button>
+  <button class="reset-btn" id="reset-bg-image">Cancel</button>
+  
+  <label>Text color:</label>
+  <input type="color" id="text-color-picker">
+  <button class="reset-btn" id="reset-text-color">Cancel</button>
+  
+  <label>Font size:</label>
+  <input type="range" id="font-size-slider" min="10" max="50" value="16">
+  <button class="reset-btn" id="reset-font-size">Cancel</button>
+  
+  <button id="bold-btn">Bold</button>
+  <button id="italic-btn">Italics</button>
+  
+  <button id="apply-btn">Apply</button>
+</div>
+	
+	<div class="form-container" id="auth-form">
+    <h2>Login</h2>
+    <form id="login-form">
+        <label for="login-email">Email:</label>
+        <input type="email" id="login-email" placeholder="Enter your email" required>
+
+        <label for="login-password">Password:</label>
+        <input type="password" id="login-password" placeholder="Enter your password" required>
+
+        <button type="submit">Login</button>
+    </form>
+    <div class="toggle">
+        Don't have an account? <a href="#" id="to-register">Sign Up</a>
+    </div>
+</div>
+
+<div class="form-container" id="register-form" style="display: none;">
+    <h2>Register</h2>
+    <form id="registration-form">
+        <label for="register-email">Email:</label>
+        <input type="email" id="register-email" placeholder="Enter your email" required>
+
+        <label for="register-password">Password:</label>
+        <input type="password" id="register-password" placeholder="Enter your password" required>
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+
+        <button type="submit">Register</button>
+    </form>
+    <div class="toggle">
+        Already have an account? <a href="#" id="to-login">Login</a>
+    </div>
+</div>
+<div id="joke-container">
+    <p id="joke-setup"></p>
+    <p id="joke-punchline"></p>
+    <button id="fetch-joke">Get a Joke</button>
+</div>
+<script src="script.js"></script>
+<script src="fetch.js"></script>
+<script src="script2.js"></script>
+	<script>
+    const authForm = document.getElementById('auth-form');
+    const registerForm = document.getElementById('register-form');
+    const toRegisterLink = document.getElementById('to-register');
+    const toLoginLink = document.getElementById('to-login');
+
+    toRegisterLink.addEventListener('click', () => {
+        authForm.style.display = 'none';
+        registerForm.style.display = 'block';
+    });
+
+    toLoginLink.addEventListener('click', () => {
+        registerForm.style.display = 'none';
+        authForm.style.display = 'block';
+    });
+
+    document.getElementById('login-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Login functionality to be implemented.');
+    });
+
+    document.getElementById('registration-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const password = document.getElementById('register-password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+        if (password !== confirmPassword) {
+            alert('Passwords do not match!');
+            return;
+        }
+        alert('Registration functionality to be implemented.');
+    });
+</script>
+
+    <!-- Футер -->
+    <footer>
+        <p>&copy; 2024 Limbo Patriarch. All rights reserved.</p>
+    </footer>
+</body>
+</html>

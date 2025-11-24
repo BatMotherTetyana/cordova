@@ -1,51 +1,235 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The portfolio of Limbo Patriarch is an artist who creates furry, pony, anthro and monster art. Learn more about services, styles, pricing and fees.">
+    <meta name="keywords" content="Limbo Patriarch, furry art, anthro art, monster art, pony artist, order a drawing, commissions for art">
+    <meta name="author" content="Limbo Patriarch">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Limbo Patriarch - Artist's Portfolio">
+    <meta property="og:description" content="Limbo Patriarch's official portfolio - furry, anthro, monster, and pony art creation services. Various styles are available: sketches, full body, stickers.">
+    <meta property="og:image" content="https://batmothertetyana.github.io/Portfolio/images/logo.png">
+    <meta property="og:url" content="https://batmothertetyana.github.io/Portfolio/">
+    <title>Limbo Patriarch - Artist's Portfolio</title>
 
-    http://www.apache.org/licenses/LICENSE-2.0
+    <!-- Подключение CSS файлов -->
+	
+    <link rel="stylesheet" href="styles/body.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="animated-background"></canvas>
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
-            https://cordova.apache.org/docs/en/latest/
-        Some notes:
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-			HELLOHELLOHELLOHELLOHELLO
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+    <!-- Верхняя навигация -->
+  <header>
+    <nav>
+        <ul>
+            <li><a href="#">Beginning</a></li>
+            <li><a href="login.html">Login</a></li>
+			<button id="style-panel-btn">⛭</button>
+        </ul>
+    </nav>
+</header>
+	
+	<div id="style-panel" style="display: none;">
+  <h2>Styles control panel</h2>
+  
+  <label>Background color:</label>
+  <input type="color" id="background-color-picker">
+  <button class="reset-btn" id="reset-bg-color">Cancel</button>
+  
+  <label>Background image:</label>
+  <input type="text" id="background-url" placeholder="Paste the URL of the image">
+  <button id="apply-background-url">Apply image</button>
+  <button class="reset-btn" id="reset-bg-image">Cancel</button>
+  
+  <label>Text color:</label>
+  <input type="color" id="text-color-picker">
+  <button class="reset-btn" id="reset-text-color">Cancel</button>
+  
+  <label>Font size:</label>
+  <input type="range" id="font-size-slider" min="10" max="50" value="16">
+  <button class="reset-btn" id="reset-font-size">Cancel</button>
+  
+  <button id="bold-btn">Bold</button>
+  <button id="italic-btn">Italics</button>
+  
+  <button id="apply-btn">Apply</button>
+</div>
+
+
+
+
+ <!-- Боковая навигация -->
+		ㅤ<br>ㅤ<br>
+<aside id="bannerr">
+        <a href="https://t.me/LimboEmpire" target="_blank"><img src="images/image1.webp" alt="Telegram" class="i"></a>
+        <a href="https://www.instagram.com/superlimbo_/profilecard/" target="_blank"><img src="images/image2.webp" alt="Instagram" class="i"></a>
+        <a href="https://www.furaffinity.net/user/superlimbo" target="_blank"><img src="images/image3.png" alt="FurAffinity" class="i"></a>
+        <a href="https://www.youtube.com/@SuperLimbo" target="_blank"><img src="images/image4.png" alt="YouTube" class="i"></a>
+        <a href="https://hipolink.me/limbo" target="_blank"><img src="images/image5.png" alt="Hipolink" class="i"></a>
+        <a href="https://boosty.to/superlimbo" target="_blank"><img src="images/image6.png" alt="Boosty" class="i"></a>
+    </aside>
+
+    <!-- Баннер сайта -->
+    <section id="banner">
+        <img src="images/imgg.png" alt="Logo" width="200" height="200">
+        <h1>LIMBO PATRIARCH</h1>
+        <blockquote>Welcome to my page!</blockquote>
+    </section>
+
+    <!-- Основной контент страницы -->
+    <main id="news">
+        <article class="expandable">
+            <h2>▽ About me</h2>
+            <div class="content">
+                <p>Hello! My name is Limbo Patriarch. If you have landed on <br>
+                   this page, it means you are interested in my work.</p>
+                <p>You can address me as you wish (he/she), I am genderfluid.</p>
+                <p>I live in Ukraine, but I speak Russian well.</p>
+                <p>At the moment I am 19 years old (14/06/2005).</p>
+                <p>I've been drawing for about 8 years.</p>
+                <div class="image-container">
+                    <img src="images/image0.jpg" alt="About Me">
+                </div>
             </div>
-        </div>
-        <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
-    </body>
+        </article>
+    <article class="expandable">
+            <h2>▽ Fursona</h2>
+            <div class="content">
+                <p>
+                    Race: Bat<br>
+                    Gender: Genderfluid<br>
+                    Orientation: Asexual<br>
+                    Height: 6.56' (with ears)<br>
+                    Weight: 50kg<br>
+                    Wingspan: 3.28'<br>
+                    Tail length: 4.9'
+                </p>
+                <img src="images/imag2.png" alt="Fursona Image" class="center-image">
+                <p>
+                    Palette:<br>
+                    Body - #332941<br>
+                    Blue pattern - #08adff<br>
+                    Orange pattern - #f77213
+                </p>
+                <img src="images/imag1.jpg" alt="Fursona Palette" class="center-image">
+                <p>Paws and nose color - #796a8b</p>
+                <p>Yellow eye - #f7b312</p>
+                <p>Blue eye - #3878fe</p>
+            </div>
+        </article>
+    <article class="expandable">
+        <h2>▽ Price list</h2>
+        <div class="content">
+			<p>Comms are open!<br><br>
+			I draw: Furries, ponies, monsters, anthro, dragons, NSFW. <br>
+			I don’t draw: people, animals, orders that are contrary to the law.<br><br>
+			</p>
+				<div class="p">
+					<img src="images/p1.gif" alt="Example image" class="center-image">
+				</div><br><br>
+			<p>Sketch:<br>
+			$5 - head<br>
+			$10 - half body<br>
+			$15 - full body<br>
+			Most sketches are drawn with color.<br>
+			Additional charges may apply for backgrounds and complex characters.<br>
+			Free requests for corrections - 3<br><br>
+			</p>
+				<div class="p">
+					<img src="images/p2.png" alt="Sketch example" class="center-image">
+				</div><br><br>
+			<p>Art: <br>
+			Head - $15<br>
+			Half body - $30<br>
+			Full body - $45<br>
+			Free edits - 5<br>
+			Background fill - free<br>
+			Complex background - from $10<br>
+			Depending on the complexity of the character, the price may vary.<br><br>
+			</p>
+				<div class="p">
+					<img src="images/p3.png" alt="Art example" class="center-image">
+				</div><br><br>
+			<p>Sticker:<br>
+			from $10 per piece<br><br>
+			</p>
+				<div class="p">
+					<img src="images/p4.png" alt="Sticker example" class="center-image">
+				</div>
+				<div class="p">
+					<img src="images/p5.png" alt="Another sticker example" class="center-image">
+				</div><br><br>
+			<p>Panel with your character:<br><br>
+			From $70 depending on the complexity of your character.<br>
+			Everything is discussed personally.<br><br>
+			</p>
+				<div class="p">
+					<img src="images/p6.png" alt="Panel example" class="center-image">
+				</div><br><br>
+			<p>Payment directly to card, PayPal, or Boosty.
+			</p>
+		</div>
+
+    </article>
+</main>
+
+
+    <div class="slider">
+	  <button class="prev">&lt;</button> <!-- Кнопка "влево" -->
+	  <div class="slider-wrapper">
+		<img src="images/p8.png" alt="Image 2">
+		<img src="images/p7.png" alt="Image 1">
+		<img src="images/p9.png" alt="Image 3">
+		<img src="images/p10.jpg" alt="Image 4">
+		<img src="images/p11.jpg" alt="Image 5">
+		<img src="images/p12.jpg" alt="Image 6">
+		<img src="images/p13.png" alt="Image 7">
+		<img src="images/p14.png" alt="Image 8">
+		<img src="images/p15.jpg" alt="Image 9">
+		<img src="images/p16.jpg" alt="Image 10">
+	  </div>
+	  <button class="next">&gt;</button> <!-- Кнопка "вправо" -->
+	</div>
+	
+	
+<script src="script.js"></script>
+<script src="script2.js"></script>
+	
+	<script>
+  const sliderWrapper = document.querySelector('.slider-wrapper');
+  const images = document.querySelectorAll('.slider-wrapper img');
+  const prevButton = document.querySelector('.prev');
+  const nextButton = document.querySelector('.next');
+
+  let currentIndex = 0; // Текущий индекс изображения
+
+  function updateSlider() {
+    const offset = -currentIndex * 100; // Смещение на нужный слайд
+    sliderWrapper.style.transform = `translateX(${offset}%)`; // Двигаем слайды
+    prevButton.disabled = currentIndex === 0; // Блокируем кнопку "влево" на первом слайде
+    nextButton.disabled = currentIndex === images.length - 1; // Блокируем кнопку "вправо" на последнем слайде
+  }
+
+  prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) currentIndex--; // Уменьшаем индекс
+    updateSlider();
+  });
+
+  nextButton.addEventListener('click', () => {
+    if (currentIndex < images.length - 1) currentIndex++; // Увеличиваем индекс
+    updateSlider();
+  });
+
+  // Первоначальная настройка
+  updateSlider();
+</script>
+		ㅤ<br>ㅤ<br>ㅤ<br>ㅤ<br>ㅤ<br>
+    <!-- Футер -->
+    <footer>
+        <p>&copy; 2024 Limbo Patriarch. All rights reserved.</p>
+    </footer>
+</body>
 </html>
